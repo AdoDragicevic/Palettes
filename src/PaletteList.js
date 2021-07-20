@@ -8,13 +8,8 @@ class PaletteList extends Component {
         const { palettes } = this.props;
         return (
             <div className="PaletteList">
-                <MiniPalette />
                 {palettes.map( palette => (
-                    <h1>
-                        <Link to={`/palette/${palette.id}`}>
-                        {palette.paletteName}
-                        </Link>
-                    </h1>
+                    <MiniPalette { ...palette } />
                 ))}
             </div>
         )
