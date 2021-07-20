@@ -6,11 +6,19 @@ import { Component } from 'react';
 import { Switch, Route } from "react-router-dom"
 
 class App extends Component {
+
+  findPalette(id) {
+    return seedColors.find( plt => plt.id === id);
+  };
+
   render() {
     return(
       <Switch>
           <Route exact path="/" render={ () => <h1> Palette List </h1>} />
-          <Route exact path="/:id" render={ () => <p> individual palette </p>} />
+          <Route exact path="/:id" render={ (routeProps) => (
+              <Palette palette={ generatePalette(this.findPalette(routeProps.match.params.id))} />
+            )} 
+          />
         </Switch>
     )
   }
