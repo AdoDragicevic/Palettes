@@ -19,11 +19,14 @@ class Palette extends Component {
         const { level, format } = this.state;
         const { colors, paletteName, id } = this.props.palette;
         const colorBoxes = colors[level].map( color => (
+            //mislim da je ovaj showLink potpuno nepotreban
+            //unutar ColorBox provjeri da li ima moreUrl i to je to
             <ColorBox 
                 key={color.id} 
                 background={color[format]} 
                 name={color.name}
                 moreUrl={`/palette/${id}/${color.id}`}
+                showLink
             />
         ));
         return (
