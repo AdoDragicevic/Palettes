@@ -20,6 +20,7 @@ class App extends Component {
               <Palette palette={ generatePalette(this.findPalette(routeProps.match.params.id))} />
             )} 
           />
+          <Route path="/palette/:paletteId/:colorId" render={ } />
         </Switch>
     )
   }
