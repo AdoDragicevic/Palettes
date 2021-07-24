@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ColorBox from "./ColorBox";
+import PaletteFooter from "./PaletteFooter";
 import Navbar from "./Navbar";
 import "./Palette.css";
 
@@ -17,7 +18,7 @@ class Palette extends Component {
 
     render() {
         const { level, format } = this.state;
-        const { colors, paletteName, id } = this.props.palette;
+        const { colors, paletteName, emoji, id } = this.props.palette;
         const colorBoxes = colors[level].map( color => (
             //mislim da je ovaj showLink potpuno nepotreban
             //unutar ColorBox provjeri da li ima moreUrl i to je to
@@ -35,15 +36,12 @@ class Palette extends Component {
                     level={level} 
                     changeLevel={this.changeLevel}
                     handleChange={this.changeFormat}
+                    showingAllColors
                 />
                 <div className="Palette-colors">
                     {colorBoxes}
                 </div>
-                <footer className="Palette-footer">
-                    <span>{paletteName}</span>
-                    {//<span className="emoji">{emoji}</span>
-                    }
-                </footer>
+                <PaletteFooter paletteName={paletteName} emoji={emoji} />
             </div>
         )
     }
