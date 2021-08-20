@@ -15,7 +15,7 @@ const styles = {
         cursor: "pointer",
         marginBottom: "-4px",
         "&:hover button": {
-            opacitiy: "1"
+            opacity: 1
         } 
     },
     copyText: {
@@ -36,7 +36,6 @@ const styles = {
         textAlign: "center",
         lineHeight: "30px",
         textTransform: "uppercase",
-        opacity: "0"
     },
     copyButton: {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "rgba(0, 0, 0, .5)",
@@ -54,8 +53,70 @@ const styles = {
         backgroundColor: "rgba(255, 255, 255, .3)",
         fontSize: "1rem",
         lineHeight: "30px",
-        color: "white",
         textDecoration: "none",
+        textTransform: "uppercase",
+        opacity: 0
+    },
+    boxContent: {
+        boxSizing: "border-box",
+        position: "absolute",
+        left: "0",
+        bottom: "0",
+        padding: "10px",
+        width: "100%",
+        color: "black",
+        letterSpacing: "1px",
+        textTransform: "uppercase",
+        fontSize: "12px",
+    },
+    copyOverlay: {
+        opacity: "0",
+        zIndex: "0",
+        width: "100%",
+        height: "100%",
+        transition: "transform .6s ease-in-out",
+        transform: "scale(0.1)"
+    },
+    showOverlay: {
+        opacity: "1",
+        transform: "scale(50)",
+        zIndex: "10",
+        position: "absolute"
+    },
+    copyMessage: {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        right: "0",
+        bottom: "0",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "3rem",
+        transform: "scale(0.1)",
+        opacity: "0",
+        color: "white",
+        "& h1": {
+            fontWeight: "400",
+            textShadow: "1px 2px black",
+            backgroundColor: "rgba(255 , 255, 255, .3)",
+            width: "100%",
+            textAlign: "center",
+            marginBottom: "0",
+            padding: "1rem"
+        },
+        "& p": {
+            fontSize: "2rem",
+            fontWeight: "100"
+        }
+    },
+    showMessage: {
+        opacity: "1",
+        transform: "scale(1)",
+        zIndex: "20",
+        transitionDelay: ".3s",
+        transition: "all .4s ease-in-out",
         textTransform: "uppercase"
     }
 };
@@ -76,22 +137,26 @@ class ColorBox extends Component {
         return(
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
                 <div style={{ background }} className={classes.ColorBox}>
-                    <div style={{ background }} className={`copy-overlay ${copied && "show"}`}></div>
-                    <div className={`copy-msg ${copied && "show"}`}>
+                    <div 
+                        style={{ background }} 
+                        className={`${classes.copyOverlay} ${copied && classes.showOverlay}`}
+                    >
+                    </div>
+                    <div className={`${classes.copyMessage} ${copied && classes.showMessage}`}>
                         <h1>Copied!</h1>
                         <p className={classes.copyText}>{background}</p>
                     </div>
-                    <div className="copy-container">
-                        <div className="box-content">
+                    <div>
+                        <div className={classes.boxContent}>
                             <span className={classes.colorName}>{name}</span>
-                            {showingFullPalette && (
-                                <Link to={moreUrl} onClick={ e => e.stopPropagation() }>
-                                    <span className={classes.seeMore}>More</span>
-                                </Link>
-                            )}
                         </div>
                         <button className={classes.copyButton}>Copy</button>
                     </div>
+                    {showingFullPalette && (
+                    <Link to={moreUrl} onClick={ e => e.stopPropagation() }>
+                        <span className={classes.seeMore}>More</span>
+                    </Link>
+                    )}
                 </div>
             </CopyToClipboard>
         );
