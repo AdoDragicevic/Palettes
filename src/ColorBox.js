@@ -1,8 +1,15 @@
 import { Component } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
 import chroma from "chroma-js";
 import "./ColorBox.css";
+
+const styles = {
+    copyText: {
+        color: "yellow"
+    }
+};
 
 class ColorBox extends Component {
 
@@ -15,7 +22,7 @@ class ColorBox extends Component {
     };
 
     render() {
-        const { name, background, moreUrl, showLink } = this.props;
+        const { name, background, moreUrl, showLink, classes } = this.props;
         const { copied } = this.state;
         // nema smisla imat isDarkColor, možeš ga zamijent s !isLightColor
         const isDarkColor = chroma(background).luminance() <= 0.4;
@@ -26,7 +33,7 @@ class ColorBox extends Component {
                     <div style={{ background }} className={`copy-overlay ${copied && "show"}`}></div>
                     <div className={`copy-msg ${copied && "show"}`}>
                         <h1>Copied!</h1>
-                        <p className={isLightColor ? "dark-text" : ""}>{background}</p>
+                        <p className={classes.copyText}>{background}</p>
                     </div>
                     <div className="copy-container">
                         <div className="box-content">
@@ -45,4 +52,4 @@ class ColorBox extends Component {
     }
 }
 
-export default ColorBox;
+export default withStyles(styles)(ColorBox);
