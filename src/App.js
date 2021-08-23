@@ -1,4 +1,3 @@
-import './App.css';
 import Palette from './Palette';
 import PaletteList from "./PaletteList";
 import seedColors from './seedColors';
@@ -42,10 +41,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-/*
-<div className="App">
-        <Palette palette={generatePalette(seedColors[4])}/>
-      </div>
-*/
