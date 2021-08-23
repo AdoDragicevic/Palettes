@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 
-export default {
+const styles = {
     ColorBox: {
         width: "20%",
         height: props => props.showingFullPalette ? "25%" : "50%",
@@ -115,3 +115,5 @@ export default {
         textTransform: "uppercase"
     }
 };
+
+export default styles;

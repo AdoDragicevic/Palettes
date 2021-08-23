@@ -56,7 +56,7 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -74,7 +74,9 @@ const styles = theme => ({
 
 class NewPaletteForm extends Component {
   state = {
-    open: false,
+    open: true,
+    currentColor: "teal",
+    colors: ["purple", "#efh256"]
   };
 
   handleDrawerOpen = () => {
@@ -85,9 +87,17 @@ class NewPaletteForm extends Component {
     this.setState({ open: false });
   };
 
+  updateCurrentColor = col => {
+    this.setState({ currentColor: col.hex});
+  };
+
+  addNewColor = () => {
+    this.setState({ colors: [ ...this.state.colors, this.state.currentColor] });
+  };
+
   render() {
     const { classes } = this.props;
-    const { open } = this.state;
+    const { open, currentColor } = this.state;
 
     return (
       <div className={classes.root}>
@@ -132,8 +142,18 @@ class NewPaletteForm extends Component {
             <Button variant="contained" color="secondary">Clear palette</Button>
             <Button variant="contained" color="primary">Random color</Button>
           </div>
-          <ChromePicker />
-          <Button variant="contained" color="primary">Add color</Button>
+          <ChromePicker 
+            color={currentColor}
+            onChangeComplete={this.updateCurrentColor}
+          />
+          <Button 
+            variant="contained" 
+            color="primary" 
+            style={{ backgroundColor: `${currentColor}`}}
+            onClick={this.addNewColor}
+          >
+            Add color
+          </Button>
         </Drawer>
         <main
           className={classNames(classes.content, {
@@ -141,6 +161,9 @@ class NewPaletteForm extends Component {
           })}
         >
           <div className={classes.drawerHeader} />
+          <ul>
+            {this.state.colors.map(col => <li>{col}</li>)}
+          </ul>
         </main>
       </div>
     );
