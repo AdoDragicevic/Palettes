@@ -82,7 +82,7 @@ class NewPaletteForm extends Component {
     currentColor: "teal",
     newColorName: "",
     newPaletteName: "",
-    colors: [ {color: "blue", name: "blue" } ]
+    colors: []
   };
 
   componentDidMount() {
