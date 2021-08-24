@@ -14,7 +14,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { ChromePicker } from "react-color";
-import { arrayMove } from "react-sortable-hoc";
 
 const drawerWidth = 400;
 
@@ -139,10 +138,12 @@ class NewPaletteForm extends Component {
     this.setState({ colors: this.state.colors.filter( col => col.name !== colorName) });
   };
 
-  onSortEnd = ({ oldIndex, newIndex }) => {
-    this.setState( ({ colors }) => ({
-      colors: arrayMove(colors, oldIndex, newIndex)
-    }));
+  onSortEnd = ({oldIndex, newIndex}) => {
+    if (oldIndex === newIndex) return;
+    const { colors } = this.state;
+    const cutOut = colors.splice(oldIndex, 1);
+    colors.splice(newIndex, 0, ...cutOut);
+    this.setState({ colors });
   };
 
   render() {
