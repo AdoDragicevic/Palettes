@@ -132,9 +132,12 @@ class NewPaletteForm extends Component {
       colors: this.state.colors,
       id: newPaletteName.toLowerCase().replaceAll(" ", "-")
     };
-
     this.props.savePalette(newPalette);
     this.props.history.push("/");
+  };
+
+  removeColor = colorName => {
+    this.setState({ colors: this.state.colors.filter( col => col.name !== colorName) });
   };
 
   render() {
@@ -250,6 +253,8 @@ class NewPaletteForm extends Component {
               <DraggableColorBox 
                 color={color.color} 
                 name={color.name}
+                handleClick={() => this.removeColor(color.name)}
+                key={color.name}
               />
             ))}
         </main>
