@@ -2,6 +2,27 @@ import { Component } from "react";
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { ChromePicker } from "react-color";
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+  root: {
+    width: "80%"
+  },
+  picker: {
+    width: "100% !important",
+    marginTop: "2rem"
+  },
+  addColor: {
+    width: "100%",
+    padding: ".5rem",
+    marginTop: "1rem",
+    fontSize: "1.5rem"
+  },
+  colorNameInput: {
+    width: "100%",
+    margin: "20px 0"
+  }
+};
 
 class ColorPickerForm extends Component {
 
@@ -38,10 +59,11 @@ class ColorPickerForm extends Component {
     
   render() {
     const { currentColor, newColorName } = this.state;
-    const { paletteFull } = this.props;
+    const { classes, paletteFull } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <ChromePicker
+          className={classes.picker}
           color={currentColor}
           onChangeComplete={this.updateCurrentColor}
         />
@@ -49,8 +71,10 @@ class ColorPickerForm extends Component {
           onSubmit={this.handleSubmit}
         >
           <TextValidator 
+            className={classes.colorNameInput}
             value={newColorName}
             name="newColorName"
+            placeholder="Color name"
             onChange={this.handleChange}
             validators={[
               "required", 
@@ -63,7 +87,8 @@ class ColorPickerForm extends Component {
               "Color already added"
             ]}
           />
-          <Button 
+          <Button
+            className={classes.addColor}
             variant="contained" 
             color="primary" 
             style={{ backgroundColor: `${paletteFull ? "gray" : currentColor}`}}
@@ -78,4 +103,4 @@ class ColorPickerForm extends Component {
   };
 };
 
-export default ColorPickerForm;
+export default withStyles(styles)(ColorPickerForm);
