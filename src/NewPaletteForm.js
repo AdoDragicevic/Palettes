@@ -146,12 +146,26 @@ class NewPaletteForm extends Component {
   clearColors = () => {
     this.setState({ colors: [] });
   };
-
+  /*
   addRandomColor = () => {
    const allColors = this.props.palettes.map(p => p.colors).flat();
    const rand = Math.floor(Math.random() * allColors.length);
    const randColor = allColors[rand];
-   this.setState({ colors: [...this.state.colors, randColor ]});
+   this.setState({ colors: [...this.state.colors, randColor] });
+  };
+  */
+  addRandomColor = () => {
+    const allColors = this.props.palettes.map(p => p.colors).flat();
+    let rand, randColor;
+    do {
+      rand = Math.floor(Math.random() * allColors.length);
+      randColor = allColors[rand];
+    } while (!this.isColorAlreadyPresent(randColor, this.state.colors));
+    this.setState({ colors: [...this.state.colors, randColor] });
+  };
+
+  isColorAlreadyPresent(randColor, colors) {
+    return colors.every( color => (color.color !== randColor.color && color.name !== randColor.name) );
   };
 
   render() {
