@@ -6,9 +6,6 @@ const styles = theme => ({
   root: {
     display: 'flex',
   },
-  hide: {
-    display: 'none',
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0
@@ -24,16 +21,17 @@ const styles = theme => ({
     padding: '0 8px',
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    width: "100%"
   },
   content: {
     flexGrow: 1,
     height: "calc(100vh - 63px)",
-    padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
+    padding: 0
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
