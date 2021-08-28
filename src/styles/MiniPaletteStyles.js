@@ -1,3 +1,5 @@
+import { ArrowRight } from "@material-ui/icons";
+
 const styles = {
     root: {
         backgroundColor: "white",
@@ -6,9 +8,22 @@ const styles = {
         padding: "0.5rem",
         position: "relative",
         overflow: "hidden",
-        "&:hover": {
-            cursor: "pointer"
+        cursor: "pointer",
+        "&:hover svg": {
+            opacity: 1
         }
+    },
+    deleteIcon: {
+        backgroundColor: "#eb3d30",
+        color: "white",
+        width: "20px",
+        height: "20px",
+        position: "absolute",
+        top: "0",
+        right: "0",
+        padding: "10px",
+        zIndex: 3,
+        opacity: 0
     },
     colors: {
         backgroundColor: "#dae1e4",
