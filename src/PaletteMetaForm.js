@@ -12,7 +12,7 @@ import "emoji-mart/css/emoji-mart.css";
 class PaletteMetaForm extends Component {
   
   state = {
-    open: true,
+    stage: "form",
     newPaletteName: ""
   };
 
@@ -34,20 +34,40 @@ class PaletteMetaForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  showEmojiPicker = () => {
+    this.setState({ stage: "emoji" });
+  };
+
+  savePalette = emoji => {
+    const newPalette = {
+      paletteName: this.state.newPaletteName,
+      emoji: emoji.native
+    };
+    this.props.handleSubmit(newPalette);
+  };
+
   render() {
-    const { newPaletteName } = this.state;
-    const { handleSubmit, hideForm } = this.props;
+    const { newPaletteName, stage } = this.state;
+    const { hideForm } = this.props;
     return (
+      <div>
+        <Dialog 
+          open={stage === "emoji"}
+          onClose={hideForm}
+        >
+          <DialogTitle id="form-dialog-title">PICK PALETTE EMOJI</DialogTitle>
+           <Picker
+            title="Pick palette emoji"
+            onSelect={ this.savePalette } 
+          />
+        </Dialog>
         <Dialog
-          open={this.state.open}
+          open={stage === "form"}
           onClose={hideForm}
           aria-labelledby="form-dialog-title"
         >
           <DialogTitle id="form-dialog-title">Chose a palette name</DialogTitle>
-          
-          <Picker />
-
-          <ValidatorForm onSubmit={ () => handleSubmit(newPaletteName) }>
+          <ValidatorForm onSubmit={ this.showEmojiPicker }>
             <DialogContent>
               <DialogContentText>
                 Please enter a name for your new beautiful palette. Make sure it's unique.
@@ -86,6 +106,7 @@ class PaletteMetaForm extends Component {
             </DialogActions>
           </ValidatorForm>
         </Dialog>
+      </div>
     );
   };
 };
