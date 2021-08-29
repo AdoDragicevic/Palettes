@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import MiniPalette from "./MiniPalette";
 import styles from "./styles/PaletteListStyles";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Dialog from '@material-ui/core/Dialog';
 import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
@@ -36,7 +36,7 @@ class PaletteList extends Component {
     this.closeDialog();
   };
     
-  goToPalette(id) {
+  goToPalette = id => {
     this.props.history.push("/palette/" + id);
   };
     

@@ -1,8 +1,8 @@
 import { Component } from "react";
+import { withStyles } from "@material-ui/styles";
 import ColorBox from "./ColorBox";
 import PaletteFooter from "./PaletteFooter";
 import Navbar from "./Navbar";
-import { withStyles } from "@material-ui/styles";
 import styles from "./styles/PaletteStyles";
 
 class Palette extends Component {
@@ -22,8 +22,6 @@ class Palette extends Component {
         const { colors, paletteName, emoji, id } = this.props.palette;
         const { classes } = this.props;
         const colorBoxes = colors[level].map( color => (
-            //mislim da je ovaj showLink potpuno nepotreban
-            //unutar ColorBox provjeri da li ima moreUrl i to je to
             <ColorBox 
                 key={color.id} 
                 background={color[format]} 

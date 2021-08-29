@@ -1,5 +1,3 @@
-import { ArrowRight } from "@material-ui/icons";
-
 const styles = {
     root: {
         backgroundColor: "white",

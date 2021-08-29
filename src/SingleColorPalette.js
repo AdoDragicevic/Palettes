@@ -1,9 +1,9 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
 import PaletteFooter from "./PaletteFooter";
-import { withStyles } from "@material-ui/styles";
 import styles from "./styles/PaletteStyles";
 
 
@@ -11,8 +11,6 @@ class SingleColorComponent extends Component {
     
     constructor(props) {
         super(props);
-        // we calculate it within the component, but we do not need to add it 
-        // to state, because it never changes
         this._shades = this.gatherShades(this.props.palette, this.props.colorId);
         this.state = { format: "hex" };
     };

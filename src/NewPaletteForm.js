@@ -1,9 +1,9 @@
 import { Component } from "react";
+import { withStyles } from '@material-ui/core/styles';
 import DraggableColorList from "./DraggableColorList";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
 import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -31,8 +31,6 @@ class NewPaletteForm extends Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
-
-
 
   addNewColor = newColor => {
     this.setState({ colors: [ ...this.state.colors, newColor] });
@@ -64,14 +62,7 @@ class NewPaletteForm extends Component {
   clearColors = () => {
     this.setState({ colors: [] });
   };
-  /*
-  addRandomColor = () => {
-   const allColors = this.props.palettes.map(p => p.colors).flat();
-   const rand = Math.floor(Math.random() * allColors.length);
-   const randColor = allColors[rand];
-   this.setState({ colors: [...this.state.colors, randColor] });
-  };
-  */
+
   addRandomColor = () => {
     const allColors = this.props.palettes.map(p => p.colors).flat();
     let randColor;
