@@ -2,6 +2,15 @@ import sizes from "./sizes";
 import bg from "./bg.svg";
 
 const styles = {
+    "@global": {
+        ".fade-exit": {
+            opacity: 1
+        },
+        ".fade-exit-active": {
+            opacity: 0,
+            transition: "opacity 500ms ease-in"
+        }
+    },
     root: {
         backgroundColor: "blue",
         height: "100vh",
@@ -9,6 +18,7 @@ const styles = {
         alignItems: "flex-start",
         justifyContent: "center",
         backgroundColor: "#350EAA",
+        // SVG Bacground made with https://www.svgbackgrounds.com/
         backgroundImage: `url(${bg})`,
         backgroundAttachment: "fixed",
         overflow: "auto"
