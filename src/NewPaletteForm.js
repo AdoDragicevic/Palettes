@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import styles from "./styles/NewPaletteFormStyles";
+import seedColors from "./seedColors";
 
 
 class NewPaletteForm extends Component {
@@ -21,7 +22,7 @@ class NewPaletteForm extends Component {
 
   state = {
     open: true,
-    colors: this.props.palettes[0].colors
+    colors: seedColors[0].colors
   };
 
   handleDrawerOpen = () => {
@@ -90,14 +91,12 @@ class NewPaletteForm extends Component {
 
     return (
       <div className={classes.root}>
-
         <PaletteFormNav 
           open={open}
           palettes={palettes}
           handleSubmit={this.handleSubmit}
           handleDrawerOpen={this.handleDrawerOpen}
         />
-
         <Drawer
           className={classes.drawer}
           variant="persistent"
