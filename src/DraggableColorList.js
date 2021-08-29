@@ -12,6 +12,7 @@ function DraggableColorList({ colors, removeColor }) {
           index={i}
           handleClick={() => removeColor(color.name)}
           key={color.name}
+          distance={20}
         />
       ))}
     </div>
