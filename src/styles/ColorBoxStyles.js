@@ -15,11 +15,11 @@ const styles = {
         },
         [sizes("lg")]: {
             width: "25%",
-            height: props => props.showingFullPalette ? "20%" : "10%",
+            height: props => props.showingFullPalette ? "20%" : "33.3333%",
         },
         [sizes("md")]: {
             width: "50%",
-            height: props => props.showingFullPalette ? "10%" : "10%",
+            height: props => props.showingFullPalette ? "10%" : "20%",
         },
         [sizes("xs")]: {
             width: "100%",
@@ -112,7 +112,10 @@ const styles = {
             width: "100%",
             textAlign: "center",
             marginBottom: "0",
-            padding: "1rem"
+            padding: "1rem",
+            [sizes("xs")]: {
+                fontSize: "5rem"
+            }
         },
         "& p": {
             fontSize: "2rem",
