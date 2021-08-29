@@ -1,3 +1,5 @@
+import sizes from "./sizes";
+
 const styles = {
     Navbar: {
         display: "flex",
@@ -19,6 +21,9 @@ const styles = {
             color: "black",
             fontSize: "15px",
             letterSpacing: "1px",
+        },
+        [sizes("xs")]: {
+            display: "none"
         }
     },
     slider: {
@@ -40,6 +45,9 @@ const styles = {
         },
         "& .rc-slider-rail": {
             height: "8px"
+        },
+        [sizes("md")]: {
+            width: "150px"
         }
     },
     selectContainer: {
