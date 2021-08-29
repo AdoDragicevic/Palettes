@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import MiniPalette from "./MiniPalette";
 import styles from "./styles/PaletteListStyles";
+import { PlayCircleFilledTwoTone } from "@material-ui/icons";
 
 class PaletteList extends Component {
     
@@ -11,7 +12,7 @@ class PaletteList extends Component {
     };
     
     render() {
-        const { palettes, classes } = this.props;
+        const { palettes, classes, deletePalette } = this.props;
         return (
             <div className={classes.root}>
                 <div className={classes.container}>
@@ -23,8 +24,10 @@ class PaletteList extends Component {
                         {palettes.map( (palette, i) => (
                             <MiniPalette 
                                 { ...palette } 
-                                handleClick={ () => this.goToPalette(palette.id) } 
-                                key={i}
+                                handleClick={ () => this.goToPalette(palette.id) }
+                                deletePalette={deletePalette}
+                                key={palette.id}
+                                id={palette.id}
                             />
                         ))}
                     </div>
