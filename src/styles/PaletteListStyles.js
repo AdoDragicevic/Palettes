@@ -1,4 +1,5 @@
 import sizes from "./sizes";
+import bg from "./bg.svg";
 
 const styles = {
     root: {
@@ -6,7 +7,14 @@ const styles = {
         height: "100vh",
         display: "flex",
         alignItems: "flex-start",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: "#350EAA",
+        backgroundImage: `url(${bg})`,
+        backgroundAttachment: "fixed",
+        overflow: "auto"
+    },
+    heading: {
+        fontSize: "2rem"
     },
     container: {
         width: "50%",
