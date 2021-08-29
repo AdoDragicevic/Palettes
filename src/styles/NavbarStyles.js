@@ -46,7 +46,7 @@ const styles = {
         "& .rc-slider-rail": {
             height: "8px"
         },
-        [sizes("md")]: {
+        [sizes("sm")]: {
             width: "150px"
         }
     },
