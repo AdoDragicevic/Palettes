@@ -10,7 +10,8 @@ const styles = {
         paddingRight: "2rem"
     },
     emoji: {
-        fontSize: "1.5rem"
+        fontSize: "1rem",
+        marginLeft: ".3rem"
     }
 };
 

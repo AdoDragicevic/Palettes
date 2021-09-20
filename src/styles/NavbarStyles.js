@@ -40,7 +40,7 @@ const styles = {
             boxShadow: "none",
             width: "13px",
             height: "13px",
-            marginLeft: "-7px",
+            marginLeft: "0",
             marginTop: "-3px"
         },
         "& .rc-slider-rail": {
