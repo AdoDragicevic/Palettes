@@ -16,26 +16,22 @@ const styles = {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
-        backgroundColor: "#350EAA",
         // SVG Bacground made with https://www.svgbackgrounds.com/
         backgroundImage: `url(${bg})`,
         backgroundAttachment: "fixed",
-        overflow: "auto"
+        overflow: "auto",
     },
     heading: {
-        fontSize: "2rem"
+        fontSize: "2rem",
     },
     container: {
-        width: "50%",
+        width: "90%",
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
         flexWrap: "wrap",
-        [sizes("lg")]: {
-            width: "80%"
-        },
         [sizes("xs")]: {
-            width: "75%"
+            width: "90%"
         }
     },
     nav: {
@@ -43,14 +39,18 @@ const styles = {
         width: "100%",
         justifyContent: "space-between",
         alignItems: "center",
-        color: "white",
+        color: "#eee",
         "& a": {
-            color: "white"
+            color: "#eee"
         }
     },
     palettes: {
         boxSizing: "border-box",
         width: "100%",
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center"
+        /*
         display: "grid",
         gridTemplateColumns: "repeat(3, 30%)",
         gridGap: "2.5rem",
@@ -61,6 +61,7 @@ const styles = {
             gridTemplateColumns: "repeat(1, 100%)",
             gridGap: "1.5rem",
         }
+        */
     }
 };
 

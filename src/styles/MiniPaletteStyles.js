@@ -1,9 +1,11 @@
 const styles = {
     root: {
-        backgroundColor: "white",
-        border: "1px solid black",
+        backgroundColor: "#eee",
+        border: "1px solid rgba(0, 0, 0, .3)",
         borderRadius: "5px",
-        padding: "0.5rem",
+        padding: ".3rem .3rem .5rem .3rem",
+        margin: "1.2rem",
+        minWidth: "250px",
         position: "relative",
         overflow: "hidden",
         cursor: "pointer",
@@ -12,16 +14,17 @@ const styles = {
         }
     },
     deleteIcon: {
-        backgroundColor: "#eb3d30",
-        color: "white",
-        width: "20px",
-        height: "20px",
+        backgroundColor: "#BA2D0B",
+        color: "#eee",
+        width: "18px",
+        height: "18px",
         position: "absolute",
-        top: "0",
-        right: "0",
+        top: ".3rem",
+        right: ".3rem",
         padding: "10px",
         zIndex: 3,
-        opacity: 0
+        opacity: 0,
+        borderRadius: "3px"
     },
     colors: {
         backgroundColor: "#dae1e4",
@@ -42,7 +45,7 @@ const styles = {
     },
     emoji: {
         marginLeft: "0.5rem",
-        fontSize: "1.5rem"
+        fontSize: "1rem"
     },
     miniColor: {
         height: "25%",
