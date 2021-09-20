@@ -45,11 +45,12 @@ class PaletteList extends Component {
     const { openDeleteDialog } = this.state;
     return (
       <div className={classes.root}>
-        <div className={classes.container}>
-          <nav className={classes.nav}>
-            <h1 className={classes.heading}>React Colors</h1>
+        <nav className={classes.nav}>
+            <h1 className={classes.heading}>Color Palettes</h1>
             <Link to="/palette/new">Create Palette</Link>
           </nav>
+        
+        <div className={classes.container}>
           <TransitionGroup className={classes.palettes}>
             {palettes.map( palette => (
               <CSSTransition 

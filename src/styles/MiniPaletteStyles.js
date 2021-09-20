@@ -1,10 +1,9 @@
 const styles = {
     root: {
-        backgroundColor: "#eee",
-        border: "1px solid rgba(0, 0, 0, .3)",
+        backgroundColor: "rgba(0, 0, 0, .8)",
         borderRadius: "5px",
-        padding: ".3rem .3rem .5rem .3rem",
-        margin: "1.2rem",
+        padding: "0 0 .5rem 0",
+        margin: "1rem",
         minWidth: "250px",
         position: "relative",
         overflow: "hidden",
@@ -30,22 +29,26 @@ const styles = {
         backgroundColor: "#dae1e4",
         height: "150px",
         width: "100%",
-        borderRadius: "5px",
+        
         overflow: "hidden"
     },
-    title: {
+    footer: {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        margin: "0",
-        color: "black",
-        paddingTop: "0.5rem",
-        fontSize: "1rem",
-        position: "relative"
+        height: "25px",
+        marginTop: "5px"
+    },
+    title: {
+        display: "inline-block",
+        color: "white",
+        letterSpacing: "1.2px",
+        fontWeight: "100",
+        paddingLeft: "5px"
     },
     emoji: {
-        marginLeft: "0.5rem",
-        fontSize: "1rem"
+        fontSize: "1.2rem",
+        paddingRight: "5px"
     },
     miniColor: {
         height: "25%",
@@ -53,7 +56,7 @@ const styles = {
         display: "inline-block",
         margin: "0 auto",
         position: "relative",
-        marginBottom: "-4px"
+        marginBottom: "-4px",
     }
 };
 

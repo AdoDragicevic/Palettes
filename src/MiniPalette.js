@@ -32,10 +32,12 @@ class MiniPalette extends PureComponent {
           onClick={this.deletePalette}
         />
         <div className={classes.colors}> {miniPalettes} </div>
-        <h5 className={classes.title}>
-          {paletteName}
+        <div className={classes.footer}>
+          <h5 className={classes.title}>
+            {paletteName}
+          </h5>
           <span className={classes.emoji}>{emoji}</span>
-        </h5>
+        </div>
       </div>
     );
   };

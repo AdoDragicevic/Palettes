@@ -13,18 +13,33 @@ const styles = {
     },
     root: {
         height: "100vh",
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "center",
         // SVG Bacground made with https://www.svgbackgrounds.com/
         backgroundImage: `url(${bg})`,
         backgroundAttachment: "fixed",
         overflow: "auto",
     },
+    nav: {
+        backgroundColor: "rgba(53, 14, 170, 1)",
+        marginBottom: "3rem",
+        height: "70px",
+        display: "flex",
+        width: "100%",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "#eee",
+        "& a": {
+            color: "#eee",
+            paddingRight: "5vw",
+            fontSize: "1.4rem"
+        }
+    },
     heading: {
         fontSize: "2rem",
+        paddingLeft: "5vw",
+        fontWeight: "500"
     },
     container: {
+        margin: "0 auto",
         width: "90%",
         display: "flex",
         alignItems: "flex-start",
@@ -32,16 +47,6 @@ const styles = {
         flexWrap: "wrap",
         [sizes("xs")]: {
             width: "90%"
-        }
-    },
-    nav: {
-        display: "flex",
-        width: "100%",
-        justifyContent: "space-between",
-        alignItems: "center",
-        color: "#eee",
-        "& a": {
-            color: "#eee"
         }
     },
     palettes: {
