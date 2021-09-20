@@ -92,6 +92,7 @@ const styles = {
         position: "absolute"
     },
     copyMessage: {
+        zIndex: "-1",
         position: "fixed",
         top: "0",
         left: "0",
