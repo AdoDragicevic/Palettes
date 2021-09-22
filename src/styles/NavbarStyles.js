@@ -4,17 +4,25 @@ const styles = {
     Navbar: {
         display: "flex",
         alignItems: "center",
+        flexWrap: "wrap",
         justifyContent: "flex-start",
-        height: "6vh",
-        minHeight: "50px",
+        minHeight: "max-content",
         backgroundColor: "#FEFEFE"
     },
+    leftContent: {
+        display: "flex",
+        alignItems: "center",
+        [sizes("sm")]: {
+            width: "100%",
+            justifyContent: "space-between"
+        }
+    },
     logo: {
+        height: "50px",
         marginRight: "15px",
         padding: "0 13px",
         fontSize: "22px",
         backgroundColor: "#eceff1",
-        height: "100%",
         display: "flex",
         alignItems: "center",
         textTransform: "uppercase",
@@ -23,18 +31,15 @@ const styles = {
             color: "black",
             fontSize: "15px",
             letterSpacing: "1px",
-        },
-        [sizes("xs")]: {
-            display: "none"
         }
     },
     level: {
-        [sizes("xs")]: {
+        [sizes("sm")]: {
             display: "none"
         }
     },
     slider: {
-        width: "340px",
+        width: "200px",
         margin: "0 10px",
         display: "inline-block",
         "& .rc-slider-track": {
@@ -52,13 +57,18 @@ const styles = {
         },
         "& .rc-slider-rail": {
             height: "8px"
-        },
+        }
+    },
+    rightContent: {
+        display: "flex",
+        flexGrow: 1,
+        justifyContent: "flex-end",
         [sizes("sm")]: {
-            width: "150px"
+            justifyContent: "center",
+            width: "100vw"
         }
     },
     selectContainer: {
-        marginLeft: "auto",
         marginRight: "1rem"
     }
 };
