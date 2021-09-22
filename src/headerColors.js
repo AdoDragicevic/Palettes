@@ -1,7 +1,13 @@
-import seedColors from "./seedColors";
-
-const headerColors = seedColors.map(palette => palette.colors.map(color => color.color));
-
-console.log(headerColors);
+const headerColors = [
+  ['#F44336', '#E91E63', '#9C27B0', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722', '#795548'],
+  ['#1abc9c', '#2ecc71', '#3498db', '#9b59b6', '#16a085', '#2c3e50', '#f1c40f', '#e67e22', '#e74c3c', '#ecf0f1', '#95a5a6', '#f39c12', '#d35400', '#c0392b', '#bdc3c7'],
+  ['#FFC312', '#C4E538', '#12CBC4', '#FDA7DF', '#ED4C67', '#F79F1F', '#A3CB38', '#1289A7', '#D980FA', '#B53471', '#EE5A24', '#009432', '#EA2027', '#5758BB', '#6F1E51'],
+  ['#55efc4', '#81ecec', '#74b9ff', '#a29bfe', '#dfe6e9', '#00b894', '#00cec9', '#0984e3', '#6c5ce7', '#b2bec3', '#ffeaa7', '#fab1a0', '#ff7675', '#fd79a8', '#636e72'],
+  ['#f6e58d', '#ffbe76', '#ff7979', '#badc58', '#dff9fb', '#f9ca24', '#f0932b', '#eb4d4b', '#6ab04c', '#c7ecee', '#7ed6df', '#e056fd', '#95afc0', '#22a6b3', '#be2edd'],
+  ['#00a8ff', '#9c88ff', '#fbc531', '#4cd137', '#487eb0', '#0097e6', '#8c7ae6', '#e1b12c', '#44bd32', '#40739e', '#e84118', '#f5f6fa', '#7f8fa6', '#dcdde1', '#718093'],
+  ['#706fd3', '#f7f1e3', '#34ace0', '#33d9b2', '#aaa69d', '#227093', '#218c74', '#ff5252', '#ff793f', '#d1ccc0', '#ffb142', '#ffda79', '#b33939', '#cd6133', '#84817a'],
+  ['#25CCF7', '#EAB543', '#55E6C1', '#CAD3C8', '#F97F51', '#1B9CFC', '#F8EFBA', '#58B19F', '#B33771', '#FD7272', '#9AECDB', '#D6A2E8', '#FC427B', '#BDC581', '#82589F'],
+  ['#fad390', '#f8c291', '#6a89cc', '#82ccdd', '#b8e994', '#f6b93b', '#e55039', '#4a69bd', '#60a3bc', '#78e08f', '#fa983a', '#eb2f06', '#38ada9', '#e58e26', '#b71540']
+];
 
 export default headerColors;
