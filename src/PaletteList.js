@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import MiniPalette from "./MiniPalette";
@@ -15,6 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
+
 
 class PaletteList extends Component {
 
@@ -45,11 +45,6 @@ class PaletteList extends Component {
     const { openDeleteDialog } = this.state;
     return (
       <div className={classes.root}>
-        <nav className={classes.nav}>
-            <h1 className={classes.heading}>Color Palettes</h1>
-            <Link to="/palette/new">Create Palette</Link>
-          </nav>
-        
         <div className={classes.container}>
           <TransitionGroup className={classes.palettes}>
             {palettes.map( palette => (

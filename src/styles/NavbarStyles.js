@@ -5,7 +5,8 @@ const styles = {
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start",
-        height: "6vh"
+        height: "6vh",
+        backgroundColor: "#FEFEFE"
     },
     logo: {
         marginRight: "15px",

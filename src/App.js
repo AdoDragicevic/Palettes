@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Palette from './Palette';
 import PaletteList from "./PaletteList";
+import PaletteListNav from './PaletteListNav';
 import NewPaletteForm from './NewPaletteForm';
 import seedColors from './seedColors';
 import { generatePalette } from "./colorHelpers";
@@ -62,6 +63,7 @@ class App extends Component {
                   path="/" 
                   render={ (routeProps) => (
                     <Page>
+                      <PaletteListNav />
                       <PaletteList
                         { ...routeProps }
                         palettes={palettes}
