@@ -11,7 +11,8 @@ const styles = theme => ({
     backgroundColor: "#F5F5F5"
   },
   drawer: {
-    width: drawerWidth,
+    maxWidth: drawerWidth,
+    width: "100vw",
     flexShrink: 0
   },
   drawerPaper: {
