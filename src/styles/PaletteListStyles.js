@@ -12,11 +12,10 @@ const styles = {
         }
     },
     root: {
-        height: "100vh",
+        minHeight: "calc(100vh - 70px)",
         // SVG Bacground made with https://www.svgbackgrounds.com/
         backgroundImage: `url(${bg})`,
-        backgroundAttachment: "fixed",
-        overflow: "auto",
+        backgroundAttachment: "fixed"
     },
     container: {
         margin: "0 auto",
@@ -30,6 +29,7 @@ const styles = {
         }
     },
     palettes: {
+        marginTop: "1rem",
         boxSizing: "border-box",
         width: "100%",
         display: "flex",

@@ -1,8 +1,9 @@
+import sizes from "./sizes";
+
 const styles = {
     nav: {
         backgroundColor: "rgb(53, 14, 170)",
         background: "linear-gradient(176deg, rgba(45,12,145,1) 19%, rgba(53,14,170,1) 72%)",
-        marginBottom: "3rem",
         height: "70px",
         display: "flex",
         width: "100%",
@@ -12,14 +13,18 @@ const styles = {
         "& a": {
             color: "#eee",
             paddingRight: "5vw",
-            fontSize: "1.4rem"
+            fontSize: "1.4rem",
+            textDecoration: "none"
         }
     },
-    heading: {
-        fontSize: "2rem",
-        paddingLeft: "5vw",
-        fontWeight: "500"
-    }
+    button: {
+        [sizes("sm")]: {
+          padding: ".2rem .3rem"
+        },
+        [sizes("xs")]: {
+          margin: "0 .3rem",
+        }
+      }
 };
 
 export default styles;

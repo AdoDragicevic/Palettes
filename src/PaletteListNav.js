@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
+import Button from '@material-ui/core/Button';
 import ColorfulHeader from "./ColorfulHeader";
 import headerColors from "./headerColors.js";
 import styles from "./styles/PaletteListNavStyles";
@@ -12,7 +13,15 @@ function PaletteListNav({ classes }) {
         txt="Color Palettes" 
         colors={headerLetterColors}
       />
-      <Link to="/palette/new">Create Palette</Link>
+      <Link to="/palette/new">
+        <Button
+          className={classes.button}
+          variant="contained"
+          color="primary"
+        >
+          Create Palette
+        </Button>
+      </Link>
     </nav>  
   )
 };

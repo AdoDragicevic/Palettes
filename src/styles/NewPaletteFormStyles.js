@@ -5,6 +5,9 @@ const drawerWidth = DRAWER_WIDTH;
 const styles = theme => ({
   root: {
     display: 'flex',
+    width: "100vw",
+    height: "100vh",
+    overflow: "hidden"
   },
   drawer: {
     width: drawerWidth,
@@ -13,7 +16,9 @@ const styles = theme => ({
   drawerPaper: {
     width: drawerWidth,
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#F5F5F5",
+    overflow: "hidden"
   },
   drawerHeader: {
     display: 'flex',
