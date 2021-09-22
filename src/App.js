@@ -5,6 +5,7 @@ import Palette from './Palette';
 import PaletteList from "./PaletteList";
 import PaletteListNav from './PaletteListNav';
 import NewPaletteForm from './NewPaletteForm';
+import EditPaletteForm from "./EditPaletteForm";
 import seedColors from './seedColors';
 import { generatePalette } from "./colorHelpers";
 import SingleColorPalette from './SingleColorPalette';
@@ -29,6 +30,13 @@ class App extends Component {
     this.setState(st => ({ palettes: st.palettes.filter(p => p.id !== id) }), this.syncLocalStorage);
   };
 
+  replacePalette = (id, newPalette) => {
+    this.setState(
+      st => ({ palettes: st.palettes.map(p => p.id === id ? newPalette : p) }), 
+      this.syncLocalStorage
+      );
+  };
+
   syncLocalStorage() {
     window.localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
   };
@@ -45,6 +53,19 @@ class App extends Component {
               key={location.key}
             >
               <Switch location={location}>
+                <Route
+                  exact
+                  path="/palette/edit/:id"
+                  render={ (routeProps) => (
+                    <Page>
+                      <EditPaletteForm 
+                        replacePalette={this.replacePalette}
+                        palettes={palettes}
+                        { ...routeProps }
+                      />
+                    </Page>
+                  )}
+                />
                 <Route
                   exact
                   path="/palette/new"

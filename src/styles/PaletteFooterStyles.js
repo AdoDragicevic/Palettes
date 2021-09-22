@@ -4,7 +4,7 @@ const styles = {
         height: "3vh",
         lineHeight: "3vh",
         display: "flex",
-        justifyContent: "flex-end",
+        justifyContent: "space-between",
         fontWeight: "bold",
         padding: ".2rem",
         paddingRight: "2rem"

@@ -73,7 +73,7 @@ class Navbar extends Component {
                             <CloseIcon />
                         </IconButton>
                     ]}
-                />         
+                />       
             </header>
         )
     }

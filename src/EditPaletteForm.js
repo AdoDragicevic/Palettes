@@ -11,10 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import styles from "./styles/NewPaletteFormStyles";
-import seedColors from "./seedColors";
 
 
-class NewPaletteForm extends Component {
+class EditPaletteForm extends Component {
 
   static defaultProps = {
     maxColors: 20
@@ -22,7 +21,7 @@ class NewPaletteForm extends Component {
 
   state = {
     open: true,
-    colors: seedColors[0].colors
+    colors: this.props.palettes.find(p => p.id === this.props.match.params.id)
   };
 
   handleDrawerOpen = () => {
@@ -163,4 +162,4 @@ class NewPaletteForm extends Component {
   };
 };
 
-export default withStyles(styles, { withTheme: true })(NewPaletteForm);
+export default withStyles(styles, { withTheme: true })(EditPaletteForm);
