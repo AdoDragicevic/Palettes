@@ -5,7 +5,7 @@ const styles = {
   root: {
     width: "20%",
     height: "25%",
-    minHeight: "50px",
+    minHeight: "70px",
     margin: "0 auto",
     display: "inline-block",
     position: "relative",

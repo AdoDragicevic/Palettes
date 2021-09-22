@@ -5,7 +5,6 @@ const styles = {
     ColorBox: {
         width: "20%",
         height: props => props.showingFullPalette ? "25%" : "50%",
-        minHeight: "50px",
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
@@ -25,7 +24,8 @@ const styles = {
         [sizes("xs")]: {
             width: "100%",
             height: props => props.showingFullPalette ? "5%" : "10%",
-        }
+        },
+        minHeight: "70px",
     },
     copyText: {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "black"
@@ -47,7 +47,7 @@ const styles = {
         textTransform: "uppercase",
         [sizes("xs")]: {
             height: "100%",
-            lineHeight: "50px"
+            lineHeight: "70px"
         }
     },
     copyButton: {
