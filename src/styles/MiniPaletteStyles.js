@@ -26,7 +26,8 @@ const styles = {
         borderRadius: "3px"
     },
     colors: {
-        backgroundColor: "#dae1e4",
+        //backgroundColor: "#dae1e4",
+        backgroundColor: "#rgba(0, 0, 0, .8)",
         height: "150px",
         width: "100%",
         overflow: "hidden"

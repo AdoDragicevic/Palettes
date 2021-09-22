@@ -27,6 +27,11 @@ const styles = {
             display: "none"
         }
     },
+    level: {
+        [sizes("xs")]: {
+            display: "none"
+        }
+    },
     slider: {
         width: "340px",
         margin: "0 10px",
