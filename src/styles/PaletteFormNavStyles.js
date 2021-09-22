@@ -32,6 +32,11 @@ const styles = theme => ({
     marginLeft: 12,
     marginRight: 20,
   },
+  title: {
+    [sizes("sm")]: {
+      display: "none"
+    }
+  },
   navBtns: {
     marginRight: "1rem",
     "& a": {
@@ -47,6 +52,7 @@ const styles = theme => ({
       padding: ".2rem .3rem"
     },
     [sizes("xs")]: {
+      width: "80px",
       margin: "0 .3rem",
     }
   }

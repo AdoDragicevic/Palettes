@@ -13,7 +13,7 @@ class PaletteMetaForm extends Component {
   
   state = {
     stage: "form",
-    newPaletteName: ""
+    newPaletteName: this.props.name || ""
   };
 
   componentDidMount() {
@@ -47,6 +47,10 @@ class PaletteMetaForm extends Component {
     this.setState({ stage: "" });
   };
 
+  setTxtValidators() {
+    return this.props.name ? ["required"] : ["required, isPaletteNameUnique"];
+  };
+
   render() {
     const { newPaletteName, stage } = this.state;
     const { hideForm } = this.props;
@@ -78,10 +82,7 @@ class PaletteMetaForm extends Component {
                 name="newPaletteName"
                 label="Palette name"
                 onChange={this.handleChange} 
-                validators={[
-                  "required",
-                  "isPaletteNameUnique"
-                ]}
+                validators={this.setTxtValidators()}
                 fullWidth
                 margin="normal"
                 errorMessages={[

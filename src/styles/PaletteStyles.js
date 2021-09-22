@@ -5,9 +5,10 @@ const styles = {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
+        backgroundColor: "#F5F5F5"
     },
     colors: {
-        height: "90%",
+        height: "90%"
     },
     goBack: {
         width: "20%",

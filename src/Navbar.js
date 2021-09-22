@@ -60,7 +60,7 @@ class Navbar extends Component {
                     autoHideDuration={3000}
                     message={<span id="message-id">Format Changed to {format.toUpperCase()}</span>}
                     ContentProps= {{
-                        "aria-descibedby": "message-id"
+                        "aria-labelledby": "message-id"
                     }}
                     onClose={this.closeSnapbar}
                     action={[

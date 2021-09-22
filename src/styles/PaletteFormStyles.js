@@ -1,3 +1,4 @@
+import sizes from "./sizes";
 import { DRAWER_WIDTH } from "../constants";
 
 const drawerWidth = DRAWER_WIDTH;
@@ -8,11 +9,13 @@ const styles = theme => ({
     width: "100vw",
     height: "100vh",
     overflow: "hidden",
-    backgroundColor: "#F5F5F5"
+    backgroundColor: "#F5F5F5",
+    [sizes("xs")]: {
+      overflowY: "auto"
+    }
   },
   drawer: {
-    maxWidth: drawerWidth,
-    width: "100vw",
+    width: drawerWidth,
     flexShrink: 0
   },
   drawerPaper: {
@@ -20,7 +23,16 @@ const styles = theme => ({
     display: "flex",
     alignItems: "center",
     backgroundColor: "#F5F5F5",
-    overflow: "hidden"
+    overflowY: "auto",
+    overflowX: "hidden",
+    [sizes("md")]: {
+      width: "100vw",
+    }
+  },
+  title: {
+    [sizes("xs")]: {
+      display: "none"
+    }
   },
   drawerHeader: {
     display: 'flex',
@@ -28,7 +40,7 @@ const styles = theme => ({
     padding: '0 8px',
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
-    width: "100%"
+    width: "100%",
   },
   content: {
     flexGrow: 1,
@@ -56,10 +68,15 @@ const styles = theme => ({
     height: "100%"
   },
   buttons: {
-    width: "100%"
+    width: "100%",
+    textAlign: "center"
   },
   button: {
-    width: "50%"
+    width: "50%",
+    [sizes("xs")]: {
+      width: "150px",
+      fontSize: ".8rem"
+    }
   }
 });
 

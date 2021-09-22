@@ -36,7 +36,7 @@ class PaletteFormNav extends Component {
     
   render() {
     const { formShowing } = this.state;
-    const { classes, open, palettes } = this.props;
+    const { classes, open, palettes, name } = this.props;
     return (
       <div className={classes.root}>
         <AppBar
@@ -55,12 +55,13 @@ class PaletteFormNav extends Component {
             >
               <AddToPhotosIcon />
             </IconButton>
-            <Typography 
+            <Typography
+              className={classes.title}
               variant="h6" 
               color="inherit" 
               noWrap
             >
-              Create a palette
+              {name ? "Edit " : "Create a " } palette
             </Typography>
           </Toolbar>
           <div className={classes.navBtns}>
@@ -86,6 +87,7 @@ class PaletteFormNav extends Component {
         {formShowing && (
           <PaletteMetaForm 
             palettes={palettes} 
+            name={name}
             handleSubmit={this.handleSubmit}
             hideForm={this.hideForm}
           />

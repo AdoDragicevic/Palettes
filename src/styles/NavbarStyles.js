@@ -6,6 +6,7 @@ const styles = {
         alignItems: "center",
         justifyContent: "flex-start",
         height: "6vh",
+        minHeight: "50px",
         backgroundColor: "#FEFEFE"
     },
     logo: {

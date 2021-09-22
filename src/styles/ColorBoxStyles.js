@@ -5,6 +5,7 @@ const styles = {
     ColorBox: {
         width: "20%",
         height: props => props.showingFullPalette ? "25%" : "50%",
+        minHeight: "50px",
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
@@ -45,7 +46,8 @@ const styles = {
         lineHeight: "30px",
         textTransform: "uppercase",
         [sizes("xs")]: {
-            height: "100%"
+            height: "100%",
+            lineHeight: "50px"
         }
     },
     copyButton: {
@@ -90,7 +92,7 @@ const styles = {
     },
     showOverlay: {
         opacity: "1",
-        transform: "scale(50)",
+        transform: "scale(20)",
         zIndex: "10",
         position: "absolute"
     },

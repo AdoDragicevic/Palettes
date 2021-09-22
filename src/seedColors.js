@@ -2,7 +2,7 @@ const seedColors = [
     {
       paletteName: "Material UI Colors",
       id: "material-ui-colors",
-      emoji: "🎨",
+      emoji: "😁",
       colors: [
         { name: "red", color: "#F44336" },
         { name: "pink", color: "#E91E63" },
@@ -28,7 +28,7 @@ const seedColors = [
     {
       paletteName: "Flat UI Colors v1",
       id: "flat-ui-colors-v1",
-      emoji: "🤙",
+      emoji: "💗",
       colors: [
         { name: "Turquoise", color: "#1abc9c" },
         { name: "Emerald", color: "#2ecc71" },
@@ -136,7 +136,7 @@ const seedColors = [
     {
       paletteName: "Flat UI Colors Spanish",
       id: "flat-ui-colors-spanish",
-      emoji: "🦁",
+      emoji: "😄",
       colors: [
         { name: "JacksonsPurple", color: "#40407a" },
         { name: "C64Purple", color: "#706fd3" },
@@ -163,7 +163,7 @@ const seedColors = [
     {
       paletteName: "Flat UI Colors Indian",
       id: "flat-ui-colors-indian",
-      emoji: "🎷",
+      emoji: "🎨",
       colors: [
         { name: "OrchidOrange", color: "#FEA47F" },
         { name: "SpiroDiscoBall", color: "#25CCF7" },

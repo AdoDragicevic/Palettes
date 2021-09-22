@@ -2,9 +2,10 @@ import sizes from "./sizes";
 import chroma from "chroma-js";
 
 const styles = {
-    root: {
+  root: {
     width: "20%",
     height: "25%",
+    minHeight: "50px",
     margin: "0 auto",
     display: "inline-block",
     position: "relative",
