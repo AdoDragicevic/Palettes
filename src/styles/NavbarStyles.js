@@ -7,7 +7,7 @@ const styles = {
         flexWrap: "wrap",
         justifyContent: "flex-start",
         minHeight: "max-content",
-        backgroundColor: "#FEFEFE"
+        backgroundColor: "#F5F5F5"
     },
     leftContent: {
         display: "flex",
@@ -21,11 +21,9 @@ const styles = {
         height: "50px",
         marginRight: "15px",
         padding: "0 13px",
-        fontSize: "22px",
-        backgroundColor: "#eceff1",
+        fontSize: "22px",       
         display: "flex",
         alignItems: "center",
-        textTransform: "uppercase",
         "& a": {
             textDecoration: "none",
             color: "black",
@@ -56,7 +54,12 @@ const styles = {
             marginTop: "-3px"
         },
         "& .rc-slider-rail": {
-            height: "8px"
+            height: "8px",
+            backgroundColor: "rgba(0, 0, 0, .2)"
+        },
+        [sizes("sm")]: {
+            width: "90vw",
+            
         }
     },
     rightContent: {
@@ -65,7 +68,8 @@ const styles = {
         justifyContent: "flex-end",
         [sizes("sm")]: {
             justifyContent: "center",
-            width: "100vw"
+            width: "100vw",
+            padding: "1rem 0"
         }
     },
     selectContainer: {

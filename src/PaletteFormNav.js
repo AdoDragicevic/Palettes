@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import PaletteMetaForm from "./PaletteMetaForm";
 import AppBar from '@material-ui/core/AppBar';
@@ -64,25 +64,24 @@ class PaletteFormNav extends Component {
               {name ? "Edit " : "Create a " } palette
             </Typography>
           </Toolbar>
-          <div className={classes.navBtns}>
-              <Link to="/">
-                <Button
-                  className={classes.button}
-                  variant="contained"
-                  color="secondary"
-                >
-                  Go back
-                </Button>
-              </Link>
-              <Button
-                className={classes.button}
-                variant="contained" 
-                color="primary" 
-                onClick={this.showForm}
-              >
-                Save
-              </Button>
-            </div>
+          <div className={classes.navBtns}>            
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="secondary"
+              onClick={this.props.history.goBack}
+            >
+              Go back
+            </Button>
+            <Button
+              className={classes.button}
+              variant="contained" 
+              color="primary" 
+              onClick={this.showForm}
+            >
+              Save
+            </Button>
+          </div>
         </AppBar>
         {formShowing && (
           <PaletteMetaForm 
@@ -97,4 +96,6 @@ class PaletteFormNav extends Component {
   };
 };
 
-export default withStyles(styles, { withTheme: true })(PaletteFormNav);
+const PFN = withRouter(PaletteFormNav)
+
+export default withStyles(styles, { withTheme: true })(PFN);
