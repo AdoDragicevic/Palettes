@@ -76,6 +76,7 @@ const styles = theme => ({
   button: {
     padding: ".3rem 1rem",
     margin: "0 1rem",
+    height: "min-content",
     [sizes("xs")]: {
       width: "100px",
       padding: ".3rem",

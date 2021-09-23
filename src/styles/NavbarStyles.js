@@ -59,7 +59,7 @@ const styles = {
         },
         [sizes("sm")]: {
             width: "90vw",
-            
+            padding: "1rem 0"
         }
     },
     rightContent: {
@@ -68,8 +68,7 @@ const styles = {
         justifyContent: "flex-end",
         [sizes("sm")]: {
             justifyContent: "center",
-            width: "100vw",
-            padding: "1rem 0"
+            width: "100vw"
         }
     },
     selectContainer: {

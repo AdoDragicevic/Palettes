@@ -15,17 +15,12 @@ const styles = {
       width: "100%",
       padding: ".5rem",
       marginTop: "1rem",
-      fontSize: "1.5rem",
-      [sizes("xs")]: {
-        fontSize: "1rem"
-      }
+      fontSize: "15px",
+      marginBottom: "1rem"
     },
     colorNameInput: {
       width: "200px",
       margin: "20px 0"
-    },
-    addColor: {
-      fontSize: "15px"
     }
 };
 

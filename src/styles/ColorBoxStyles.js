@@ -31,7 +31,7 @@ const styles = {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "black"
     },
     colorName: {
-        color: props => chroma(props.background).luminance() >= 0.4 ? "white" : "black"
+        color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "black"
     },
     seeMore: {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "rgba(0, 0, 0, .5)",
@@ -47,7 +47,7 @@ const styles = {
         textTransform: "uppercase",
         [sizes("xs")]: {
             height: "100%",
-            lineHeight: "70px"
+            lineHeight: "50px"
         }
     },
     copyButton: {
