@@ -1,4 +1,4 @@
-# Palettes
+# Color Palettes App
 
 ## One of the projects in Colt Steele's Modern React Bootcamp. I improved it by removing bugs, implementing new features (e.g. editing existing palette), adding components, and chaning the styling, including implementing a fully responsive design (even for phones like Iphone SE) :purple_circle: :green_circle: :yellow_circle:
 
