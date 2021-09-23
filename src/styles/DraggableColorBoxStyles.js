@@ -26,6 +26,10 @@ const styles = {
     [sizes("sm")]: {
       width: "100%",
       height: "5%"
+    },
+    [sizes("xs")]: {
+      width: "25%",
+      height: "20%"
     }
   },
   boxContent: {
@@ -40,7 +44,15 @@ const styles = {
     textTransform: "uppercase",
     fontSize: "12px",
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    [sizes("xs")]: {
+      justifyContent: "flex-end"
+    }
+  },
+  colorName: {
+    [sizes("xs")]: {
+      display: "none"
+    }
   },
   deleteIcon: {
     transition: "all .3s ease-in-out"

@@ -15,7 +15,7 @@ class EditPaletteForm extends Component {
 
   render() {
     return (
-      <PaletteForm 
+      <PaletteForm
         handleSubmit={this.handleSubmit}
         colors={this._palette.colors} 
         name={this._palette.paletteName}

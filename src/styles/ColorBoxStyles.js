@@ -68,7 +68,10 @@ const styles = {
         lineHeight: "30px",
         textDecoration: "none",
         textTransform: "uppercase",
-        opacity: 0
+        opacity: 0,
+        [sizes("xs")]: {
+            display: "none"
+        }
     },
     boxContent: {
         boxSizing: "border-box",
@@ -88,13 +91,19 @@ const styles = {
         width: "100%",
         height: "100%",
         transition: "transform .6s ease-in-out",
-        transform: "scale(0.1)"
+        transform: "scale(0.1)",
+        [sizes("xs")]: {
+            display: "none"
+        }
     },
     showOverlay: {
         opacity: "1",
         transform: "scale(20)",
         zIndex: "10",
-        position: "absolute"
+        position: "absolute",
+        [sizes("xs")]: {
+            display: "none"
+        }
     },
     copyMessage: {
         zIndex: "-1",
@@ -126,6 +135,9 @@ const styles = {
         "& p": {
             fontSize: "2rem",
             fontWeight: "100"
+        },
+        [sizes("xs")]: {
+            display: "none"
         }
     },
     showMessage: {
@@ -134,7 +146,10 @@ const styles = {
         zIndex: "20",
         transitionDelay: ".3s",
         transition: "all .4s ease-in-out",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        [sizes("xs")]: {
+            display: "none"
+        }
     }
 };
 

@@ -48,7 +48,11 @@ class PaletteMetaForm extends Component {
   };
 
   setTxtValidators() {
-    return this.props.name ? ["required"] : ["required, isPaletteNameUnique"];
+    return this.props.name ? ["required"] : ["required", "isPaletteNameUnique"];
+  };
+
+  setValidatorErrMsg() {
+    return this.props.name ? ["Enter palette name"] : ["Enter palette name", "Name already used"];
   };
 
   render() {
@@ -85,10 +89,7 @@ class PaletteMetaForm extends Component {
                 validators={this.setTxtValidators()}
                 fullWidth
                 margin="normal"
-                errorMessages={[
-                  "Enter palette name",
-                  "Name already used"
-                ]}
+                errorMessages={this.setValidatorErrMsg()}
               />
             </DialogContent>
             <DialogActions>

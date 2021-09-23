@@ -27,7 +27,7 @@ class Navbar extends Component {
   render() {
     const { level, changeLevel, showingAllColors, colors, classes } = this.props;
     const { format } = this.state;
-    const colorfulHeaderColors = colors.map(c => c.hex);
+    const colorfulHeaderColors = colors ? colors.map(c => c.hex) : null;
     return (
       <header className={classes.Navbar}>
         <div className={classes.leftContent}>          
