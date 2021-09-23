@@ -99,7 +99,7 @@ class PaletteMetaForm extends Component {
               >
                 Cancel
               </Button>
-              <Button 
+              <Button
                 variant="contained" 
                 color="primary"
                 type="submit"

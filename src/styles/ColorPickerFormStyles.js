@@ -3,9 +3,12 @@ import sizes from "./sizes";
 const styles = {
     root: {
       width: "80%",
+      textAlign: "center"
     },
     picker: {
+      margin: "0 auto",
       width: "100% !important",
+      maxWidth: "300px !important",
       marginTop: "2rem"
     },
     addColor: {
@@ -18,8 +21,11 @@ const styles = {
       }
     },
     colorNameInput: {
-      width: "100%",
+      width: "200px",
       margin: "20px 0"
+    },
+    addColor: {
+      fontSize: "15px"
     }
 };
 

@@ -25,16 +25,13 @@ const styles = {
             width: "100%",
             height: props => props.showingFullPalette ? "5%" : "10%",
         },
-        minHeight: "70px",
+        minHeight: "50px",
     },
     copyText: {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "black"
     },
     colorName: {
-        color: props => chroma(props.background).luminance() >= 0.4 ? "white" : "black",
-        [sizes("xs")]: {
-            display: "none"
-        },
+        color: props => chroma(props.background).luminance() >= 0.4 ? "white" : "black"
     },
     seeMore: {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "rgba(0, 0, 0, .5)",
@@ -86,10 +83,7 @@ const styles = {
         color: "black",
         letterSpacing: "1px",
         textTransform: "uppercase",
-        fontSize: "12px",
-        [sizes("xs")]: {
-            display: "none"
-        }
+        fontSize: "12px"
     },
     copyOverlay: {
         opacity: "0",
@@ -155,6 +149,12 @@ const styles = {
         textTransform: "uppercase",
         [sizes("xs")]: {
             display: "none"
+        }
+    },
+    snackbar: {
+        visibility: "hidden",
+        [sizes("xs")]: {
+            visibility: "visible"
         }
     }
 };

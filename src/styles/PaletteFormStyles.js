@@ -25,13 +25,14 @@ const styles = theme => ({
     backgroundColor: "#F5F5F5",
     overflowY: "auto",
     overflowX: "hidden",
-    [sizes("md")]: {
+    [sizes("sm")]: {
       width: "100vw",
     }
   },
   title: {
+    marginBottom: "2rem",
     [sizes("xs")]: {
-      display: "none"
+      fontSize: "25px"
     }
   },
   drawerHeader: {
@@ -69,13 +70,16 @@ const styles = theme => ({
   },
   buttons: {
     width: "100%",
-    textAlign: "center"
+    display: "flex",
+    justifyContent: "center"
   },
   button: {
-    width: "50%",
+    padding: ".3rem 1rem",
+    margin: "0 1rem",
     [sizes("xs")]: {
-      width: "150px",
-      fontSize: ".8rem"
+      width: "100px",
+      padding: ".3rem",
+      fontSize: "10px"
     }
   }
 });

@@ -24,10 +24,6 @@ const styles = {
       height: "10%"
     },
     [sizes("sm")]: {
-      width: "100%",
-      height: "5%"
-    },
-    [sizes("xs")]: {
       width: "25%",
       height: "20%"
     }
