@@ -2,6 +2,9 @@ import { Component } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import styles from "./styles/ColorBoxStyles";
 
 class ColorBox extends Component {
@@ -18,6 +21,7 @@ class ColorBox extends Component {
         const { name, background, moreUrl, showingFullPalette, classes } = this.props;
         const { copied } = this.state;
         return(
+            <>
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
                 <div style={{ background }} className={classes.ColorBox}>
                     <div 
@@ -41,7 +45,14 @@ class ColorBox extends Component {
                     </Link>
                     )}
                 </div>
-            </CopyToClipboard>
+                </CopyToClipboard>
+                  <Snackbar
+                    open={this.state.copied} 
+                    autoHideDuration={500}
+                    message={<span id="message-id">Copied to clipboard</span>}
+                    ContentProps= {{"aria-labelledby": "message-id"}}
+                  />   
+            </>
         );
     }
 }

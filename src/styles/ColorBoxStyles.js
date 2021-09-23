@@ -31,7 +31,10 @@ const styles = {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "black"
     },
     colorName: {
-        color: props => chroma(props.background).luminance() >= 0.4 ? "white" : "black"
+        color: props => chroma(props.background).luminance() >= 0.4 ? "white" : "black",
+        [sizes("xs")]: {
+            display: "none"
+        },
     },
     seeMore: {
         color: props => chroma(props.background).luminance() <= 0.4 ? "white" : "rgba(0, 0, 0, .5)",
@@ -40,7 +43,7 @@ const styles = {
         border: "none",
         right: "0",
         bottom: "0",
-        width: "50px",
+        width: "55px",
         height: "30px",
         textAlign: "center",
         lineHeight: "30px",
@@ -83,7 +86,10 @@ const styles = {
         color: "black",
         letterSpacing: "1px",
         textTransform: "uppercase",
-        fontSize: "12px"
+        fontSize: "12px",
+        [sizes("xs")]: {
+            display: "none"
+        }
     },
     copyOverlay: {
         opacity: "0",
